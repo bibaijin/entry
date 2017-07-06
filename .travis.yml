@@ -24,8 +24,8 @@ after_success:
     docker tag $LAIN_APPNAME:meta-$LAIN_IMAGE_VERSION laincloud/$LAIN_APPNAME:meta-$LAIN_IMAGE_VERSION;
     docker push laincloud/$LAIN_APPNAME:release-$LAIN_IMAGE_VERSION;
     docker push laincloud/$LAIN_APPNAME:meta-$LAIN_IMAGE_VERSION;
-    rm -rf dist/
-    python setup.py sdist
-    python setup.py bdist_wheel
-    twine upload dist/*
+    rm -rf dist/;
+    python setup.py sdist;
+    python setup.py bdist_wheel;
+    twine upload dist/*;
     fi
