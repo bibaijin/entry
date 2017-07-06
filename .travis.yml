@@ -8,7 +8,10 @@ services:
 
 install: "pip install twine wheel"
 
-script: go test github.com/laincloud/entry/server
+script:
+  - lain config save-global private_docker_registry 'registry.lain.local'
+  - lain build
+  - lain test
 
 after_success:
   - LAIN_APPNAME=entry
